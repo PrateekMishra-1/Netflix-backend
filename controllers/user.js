@@ -68,7 +68,7 @@ export const Register = async (req, res) => {
             return res.status(401).json({ message: "This email is already in use", success: false })
         }
 
-        const hashedPassword = await bcryptjs.hash(password, 16);
+        const hashedPassword = await bcryptjs.hash(password, 10);
 
         //if user already nhi hai then create krenge user
         await User.create({
